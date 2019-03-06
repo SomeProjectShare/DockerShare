@@ -1,0 +1,22 @@
+FROM docker.io/frolvlad/alpine-glibc:latest
+MAINTAINER wangzunbin <905192187@qq.com>
+
+#创建jdk目录
+RUN mkdir -p /usr/java/jdk
+#创建tomcat目录
+RUN mkdir -p /usr/local/tomcat
+
+#把宿主当前目录下的jdk文件夹添加到镜像
+ADD jre8 /usr/java/jdk
+#把宿主当前目录下的tomcat文件夹添加到镜像
+ADD tomcat8 /usr/local/tomcat
+
+# set env
+ENV JAVA_HOME /usr/java/jdk
+# ENV PATH ${PATH}:${JAVA_HOME}/bin
+ENV CATALINA_HOME /usr/local/tomcat
+ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
+
+# run container with base path:/opt
+# WORKDIR /opt
+
