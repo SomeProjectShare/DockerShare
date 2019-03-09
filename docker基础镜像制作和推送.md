@@ -20,11 +20,16 @@
 
 	#来自哪个基础镜像
 	FROM docker.io/frolvlad/alpine-glibc:latest
+
 	#指定谁维护	
 	MAINTAINER wangzunbin <905192187@qq.com>
-	
+
+	#设置时区和语言环境
+	ENV TZ='Asia/Shanghai'
+
 	#创建jdk目录
 	RUN mkdir -p /usr/java/jdk
+
 	#创建tomcat目录
 	RUN mkdir -p /usr/local/tomcat
 	
