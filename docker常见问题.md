@@ -16,5 +16,8 @@
   ![](img/b3.png)
 	这两个文件的末尾
   ![](img/b4.png)
+	在新版本的IDEA中，可能还需要在菜单栏Help -> Edit Custom VM Options中追加以上内容，IDEA会首先以该文件为准
+  ![](img/b6.png)
+
 	再次启动docker 部署
   ![](img/b5.png)
